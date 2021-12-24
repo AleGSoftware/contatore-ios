@@ -21,6 +21,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var two: UILabel!
     @IBOutlet weak var stepperMax: UIStepper!
     @IBOutlet weak var max: UILabel!
+    @IBOutlet weak var g1Label: UILabel!
+    @IBOutlet weak var g2Label: UILabel!
     @IBAction func stepperOneChanged(_ sender: Any) {
         updateScores()
     }
@@ -60,13 +62,46 @@ class ViewController: UIViewController {
         }))
         self.present(alert, animated: true, completion: nil)
     }
+    @IBAction func settings(_ sender: Any) {
+        var textField = UITextField()
+        var textField2 = UITextField()
+                    
+                    let alert = UIAlertController(title: "Imposta nomi", message: "", preferredStyle: .alert)
+                    alert.addTextField { alertTextField in
+                        alertTextField.placeholder = "Giocatore 1"
+                        textField = alertTextField
+                    }
+        alert.addTextField { alertTextField2 in
+            alertTextField2.placeholder = "Giocatore 2"
+            textField2 = alertTextField2
+        }
+                    
+                    let action = UIAlertAction(title: "Salva", style: .default) { action in
+                        print("PNSET")
+                        self.g1Label.text = textField.text!
+                        self.g2Label.text = textField2.text!
+                        
+                    }
+                    
+                    alert.addAction(action)
+                    present(alert, animated: true, completion: nil)
+
+        
+        
+    }
     func updateMaxScore(to: Double){
         max.text = String(Int(to))
         stepperOne.maximumValue = to
         stepperTwo.maximumValue = to
     }
     func andTheWinnerIs(player: Int){
-        let alert = UIAlertController(title: "Vincitore", message: "Il vincitore è il giocatore " + String(player), preferredStyle: .alert)
+        var winner = String()
+        if player == 1{
+            winner = g1Label.text!
+        }else if player == 2 {
+            winner = g2Label.text!
+        }
+        let alert = UIAlertController(title: "Vincitore", message: "Il vincitore è il giocatore \"\(winner)\"!!!ì", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
         NSLog("The \"OK\" alert occured.")
         }))
