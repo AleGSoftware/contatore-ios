@@ -13,6 +13,7 @@
 		72D302902774B39600DD63F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72D3028E2774B39600DD63F9 /* Main.storyboard */; };
 		72D302922774B39700DD63F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72D302912774B39700DD63F9 /* Assets.xcassets */; };
 		72D302952774B39700DD63F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72D302932774B39700DD63F9 /* LaunchScreen.storyboard */; };
+		72F794C22775C45800FD4C7F /* winsound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 72F794C12775C45800FD4C7F /* winsound.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		72D302912774B39700DD63F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		72D302942774B39700DD63F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		72D302962774B39700DD63F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72F794C12775C45800FD4C7F /* winsound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = winsound.wav; path = ../../../Downloads/winsound.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		72D302872774B39600DD63F9 /* contatoreios */ = {
 			isa = PBXGroup;
 			children = (
+				72F794C12775C45800FD4C7F /* winsound.wav */,
 				72D302882774B39600DD63F9 /* AppDelegate.swift */,
 				72D3028A2774B39600DD63F9 /* SceneDelegate.swift */,
 				72D3028C2774B39600DD63F9 /* ViewController.swift */,
@@ -128,6 +131,7 @@
 				72D302952774B39700DD63F9 /* LaunchScreen.storyboard in Resources */,
 				72D302922774B39700DD63F9 /* Assets.xcassets in Resources */,
 				72D302902774B39600DD63F9 /* Main.storyboard in Resources */,
+				72F794C22775C45800FD4C7F /* winsound.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

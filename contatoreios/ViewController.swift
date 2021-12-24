@@ -6,7 +6,8 @@
 //
 
 import UIKit
-
+import AVFoundation
+var audioPlayer : AVPlayer!
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -56,7 +57,7 @@ class ViewController: UIViewController {
         updateScores()
     }
     @IBAction func info(_ sender: Any) {
-        let alert = UIAlertController(title: "Contatore", message: "versione 1.0 Beta 1\n © 2021 AleGSoftware\n\nAlessandro Guizzetti", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Contatore", message: "versione 1.0 Beta 2\n © 2021 AleGSoftware\n\nAlessandro Guizzetti\n\nWin Sound: Mativve from Freesound.org", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
         NSLog("The \"OK\" alert occured.")
         }))
@@ -101,10 +102,24 @@ class ViewController: UIViewController {
         }else if player == 2 {
             winner = g2Label.text!
         }
-        let alert = UIAlertController(title: "Vincitore", message: "Il vincitore è il giocatore \"\(winner)\"!!!ì", preferredStyle: .alert)
+        playWinSound()
+        let alert = UIAlertController(title: "Vincitore", message: "Il vincitore è il giocatore \"\(winner)\"!", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
         NSLog("The \"OK\" alert occured.")
         }))
         self.present(alert, animated: true, completion: nil)
+    }
+    private func playWinSound() {
+            guard let url = Bundle.main.url(forResource: "winsound", withExtension: "wav") else {
+                print("error to get the mp3 file")
+                return
+            }
+
+            do {
+                audioPlayer = try AVPlayer(url: url)
+            } catch {
+                print("audio file error")
+            }
+            audioPlayer?.play()
     }
 }
